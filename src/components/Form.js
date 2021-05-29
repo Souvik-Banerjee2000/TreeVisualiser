@@ -1,6 +1,7 @@
 import React,{useState,useEffect,useRef, useContext} from 'react'
 import {DataContext} from "../context/DataContext";
 import {SubmissionContext} from "../context/SubmissionContext";
+import "./styles/Form.css";
 function Form() {
 
   const [inputValue,setInputValue] = useState(0);
@@ -18,13 +19,14 @@ function Form() {
         parentValue:'',
         nodeValue:inputValue
     })
+    e.target.reset();
 
   }
 
     return (
         
-        <form onSubmit={(e)=>{handleSubmit(e)}}>
-            <input type="number" onChange= {(e)=>{setInputValue(Number(e.target.value))}}></input>
+        <form className="inputform" onSubmit={(e)=>{handleSubmit(e)}}>
+            <input type="number" placeholder="Enter node value" onChange= {(e)=>{setInputValue(Number(e.target.value))}}></input>
             <input type="submit" value="Submit"></input>
         </form>
     

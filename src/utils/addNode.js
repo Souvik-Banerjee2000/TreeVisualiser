@@ -23,10 +23,10 @@ function add(root,name){
                 // }else{
                 //     root = root.children[1];
                 // }
-                setTimeout(()=>{
-                    console.log("hello");
-                    root = root.children[0];
-                },10000)
+            
+                console.log("hello");
+                root = root.children[0];
+            
 
                 
             }
@@ -46,15 +46,14 @@ function add(root,name){
             }else{
                 
                 if(root.attributes.left !== ''){
-                    setTimeout(()=>{
-                        console.log("hello");
-                        root = root.children[1];
-                    },10000)
+                
+                    console.log("hello");
+                    root = root.children[1];
+                
                 }else{
-                    setTimeout(()=>{
-                        console.log("hello");
-                        root = root.children[0];
-                    },10000)
+                    console.log("hello");
+                    root = root.children[0];
+                
                 }
             }
         }

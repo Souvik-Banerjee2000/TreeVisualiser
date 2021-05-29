@@ -1,0 +1,36 @@
+.inputform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+input[type=number], select, textarea {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+
+input[type=submit] {
+    background-color: #2185D0;
+    margin-left: 0.6%;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    font-family: 'lato';
+  }
+  
+  input[type=submit]:hover {
+    background-color: #1e97f3;
+    cursor: pointer;
+  }
+  
+ ::placeholder{
+     font-family: 'lato';
+ } 
