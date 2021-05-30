@@ -17,8 +17,7 @@ function DropDown() {
     }
 
     return (
-        <>
-        {JSON.stringify(output)}
+
         <div className="dropdowm-component">
             
             <select className="dropdown" id="algorithms" onChange={(e)=>{handelChange(e)}}>
@@ -30,7 +29,6 @@ function DropDown() {
             </select>
             
         </div>
-        </>
     )
 }
 

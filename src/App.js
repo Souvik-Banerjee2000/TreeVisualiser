@@ -6,6 +6,7 @@ import DataContextProvider from "./context/DataContext";
 import ResultContextProvider from "./context/ResultContext";
 import SubmissionContextProvider from "./context/SubmissionContext";
 import Form from "./components/Form";
+import Result from "./components/Result";
 import DropDown from "./components/DropDown"
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <SubmissionContextProvider>  
         <Form/>
         <DropDown/>
+        <Result/>
         <TreeComponent/>
         </SubmissionContextProvider>
       </ResultContextProvider>
