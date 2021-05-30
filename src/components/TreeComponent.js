@@ -36,8 +36,6 @@ function TreeComponent() {
     return (
         
         <div id="treeWrapper" ref={containerRef} style={{ width: '100vw', height: '100vh' }}  >
-            {console.log(treeData)}
-            {console.log(orgChart)}
             {Object.keys(treeData).length === 0 ?(
                 <></>
             ):(
