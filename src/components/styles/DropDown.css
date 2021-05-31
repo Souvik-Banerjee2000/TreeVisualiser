@@ -1,6 +1,6 @@
 .dropdowm-component{
   display: flex;
-  width:100%;
+  /* width:100%; */
   height:fit-content;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,7 @@
 
 .dropdown {
   margin: 50px;
-  width: 80%;
+  /* width: 80%; */
   padding: 5px 35px 5px 5px;
   border: 1px solid #CCC;
   font-family: 'lato';

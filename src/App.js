@@ -16,6 +16,9 @@ function App() {
     <DataContextProvider>
       <ResultContextProvider>    
         <SubmissionContextProvider>  
+          <div style={{width:'100vw',display:'flex',alignItems:'center',justifyContent:'center',marginBottom:'20px'}}>
+            <h1 style={{ margin:'0 auto' , color:'#2c88d9'}}>Binary Search Tree</h1>
+        </div>
         <Form/>
         <DropDown/>
         <Result/>

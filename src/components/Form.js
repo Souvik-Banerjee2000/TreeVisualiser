@@ -25,9 +25,9 @@ function Form() {
 
     return (
         
-        <form className="inputform" onSubmit={(e)=>{handleSubmit(e)}}>
-            <input type="number" placeholder="Enter node value" onChange= {(e)=>{setInputValue(Number(e.target.value))}}></input>
-            <input type="submit" value="Submit"></input>
+        <form className="inputform" onSubmit={(e)=>{handleSubmit(e)}} >
+            <input type="number" style={{backgroundColor:'#F0F4F7' , border:'1px solid #2e2e2e'}} placeholder="Enter node value" onChange= {(e)=>{setInputValue(Number(e.target.value))}}></input>
+            <input type="submit" value="Add"></input>
         </form>
     
     )

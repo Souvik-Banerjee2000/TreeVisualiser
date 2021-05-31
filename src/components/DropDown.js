@@ -6,7 +6,7 @@ function DropDown() {
 
     const {treeData,dispatch} = useContext(DataContext);
     const {output,dispatchOutput} = useContext(ResultContext);
-    const algorithm = useRef("select");
+    const algorithm = useRef("Select");
     function handelChange(e){
         console.log(e.target.value);
         algorithm.current = e.target.value;
@@ -29,8 +29,8 @@ function DropDown() {
 
         <div className="dropdowm-component">
             
-            <select className="dropdown" id="algorithms" onChange={(e)=>{handelChange(e)}}>
-                <option className="dropdown-content" value="select">Select An Algorithm</option>
+            <select className="dropdown" style={{backgroundColor:'#F0F4F7', border:'1px solid #2e2e2e',display:'flex',alignItems:'center',justifyContent:'center'}} id="algorithms" onChange={(e)=>{handelChange(e)}}>
+                <option className="dropdown-content" value="Select">Select An Algorithm</option>
                 <option className="dropdown-content" value="Inorder">Inorder Traversal</option>
                 <option className="dropdown-content" value="Preorder">Preorder Traversal</option>
                 <option className="dropdown-content" value="Postorder">Postorder Traversal</option>

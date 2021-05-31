@@ -13,7 +13,9 @@ export const ResultReducer = (state,action) => {
         case "LeftView":
             return leftView(state,action.data);    
         case "RightView":
-            return rightView(state,action.data);                      
+            return rightView(state,action.data);   
+        case "Select":
+            return [];                       
         default:
             return state;    
 
