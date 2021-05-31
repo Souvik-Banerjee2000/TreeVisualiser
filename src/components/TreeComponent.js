@@ -35,7 +35,7 @@ function TreeComponent() {
     
     return (
         
-        <div id="treeWrapper" ref={containerRef} style={{ width: '100vw', height: '100vh' }}  >
+        <div id="treeWrapper" ref={containerRef} style={{ width: '80vw', height: '100vh' }}  >
             {Object.keys(treeData).length === 0 ?(
                 <></>
             ):(
