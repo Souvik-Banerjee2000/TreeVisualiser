@@ -1,4 +1,4 @@
-import {inorder,preorder,postorder} from "../utils/traversals";
+import {inorder,preorder,postorder,levelorder,leftView,rightView} from "../utils/traversals";
 export const ResultReducer = (state,action) => {
 
     switch (action.type){
@@ -7,7 +7,13 @@ export const ResultReducer = (state,action) => {
         case "Preorder":
             return preorder(state,action.data); 
         case "Postorder":
-            return postorder(state,action.data);          
+            return postorder(state,action.data);  
+        case "Levelorder":
+            return levelorder(state,action.data);    
+        case "LeftView":
+            return leftView(state,action.data);    
+        case "RightView":
+            return rightView(state,action.data);                      
         default:
             return state;    
 

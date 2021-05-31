@@ -1,4 +1,4 @@
-import React,{useState,useContext, useEffect} from 'react';
+import React,{useState,useContext, useEffect, useRef} from 'react';
 import "./styles/DropDown.css";
 import {DataContext} from "../context/DataContext";
 import {ResultContext} from "../context/ResultContext";
@@ -6,8 +6,10 @@ function DropDown() {
 
     const {treeData,dispatch} = useContext(DataContext);
     const {output,dispatchOutput} = useContext(ResultContext);
+    const algorithm = useRef("select");
     function handelChange(e){
         console.log(e.target.value);
+        algorithm.current = e.target.value;
         dispatchOutput({
             type:e.target.value,
             data:treeData
@@ -15,6 +17,13 @@ function DropDown() {
         // e.target.reset();
 
     }
+
+    useEffect(()=>{
+        dispatchOutput({
+            type:algorithm.current,
+            data:treeData
+        })
+    },[treeData])
 
     return (
 
@@ -26,6 +35,8 @@ function DropDown() {
                 <option className="dropdown-content" value="Preorder">Preorder Traversal</option>
                 <option className="dropdown-content" value="Postorder">Postorder Traversal</option>
                 <option className="dropdown-content" value="Levelorder">Levelorder Traversal</option>
+                <option className="dropdown-content" value="LeftView">LeftView</option>
+                <option className="dropdown-content" value="RightView">RightView</option>
             </select>
             
         </div>
