@@ -8,6 +8,8 @@ function Result() {
         <div style={{display:'flex',justifyContent:'center',alignItems:'center',width:'100vw',height:'fit-content'}}>
         {output.length > 0 && 
          <div className="resultcontainer"> 
+         Algorithm Result :-
+         <br/>
             {output.map((d,index)=>(
                 <div key={index} style={{marginRight:'10px'}} > {d} </div>
             ))}
