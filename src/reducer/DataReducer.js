@@ -1,10 +1,12 @@
 import {addNode} from "../utils/addNode";
-import {inorder,preorder,postorder} from "../utils/traversals";
+import {deleteNode} from "../utils/deleteNode";
 export const DataReducer = (state,action) => {
 
     switch (action.type){
         case "Add":
             return addNode(state,action.parentValue,action.nodeValue);
+        case "Deletion" :
+            return deleteNode(state,action.inputValue);   
         default:
             return state;    
 

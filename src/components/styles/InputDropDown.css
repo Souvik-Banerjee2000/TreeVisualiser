@@ -1,0 +1,10 @@
+
+.inputdropdown{
+
+    height: 2px;
+    border: 2px solid black;
+    border-radius: 4px;
+    resize: vertical;
+    background-color: #F0F4F7;
+}
+  
