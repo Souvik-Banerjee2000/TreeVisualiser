@@ -74,18 +74,7 @@ function InputDropDown() {
 
     },[drawerOpen])
 
-    useEffect(()=>{
-        
-        if(Object.keys(treeData).length>0){
-            // console.log(inputValue);
-            dispatchOutput({
-                type:taskValue,
-                data:treeData,
-                inputValue
-            })
-        }
-        setInputValue('');
-    },[treeData])
+
 
     return (
 
