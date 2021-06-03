@@ -16,3 +16,14 @@
       stroke: #2e2e2e !important;
   }
   
+  button{
+    background-color: #2185D0;
+    margin-left: 0.6%;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    font-family: 'lato';
+  }
