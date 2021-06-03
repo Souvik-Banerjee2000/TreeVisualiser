@@ -1,7 +1,9 @@
 import React,{useState,useContext, useEffect, useRef} from 'react';
-import "./styles/DropDown.css";
+
 import {DataContext} from "../context/DataContext";
 import {ResultContext} from "../context/ResultContext";
+import {CurrentProblemContext} from "../context/CurrentProblemContext";
+import "./styles/DropDown.css";
 
 
 
@@ -10,12 +12,15 @@ function DropDown() {
 
     const {treeData,dispatch} = useContext(DataContext);
     const {output,dispatchOutput} = useContext(ResultContext);
+
+    const {currentProblem,setCurrentProblem} = useContext(CurrentProblemContext);
     
     const algorithm = useRef("Select");
     function handelChange(e){
 
         // let inputsOption = ["Deletion"]
         console.log(e.target.value);
+        setCurrentProblem(e.target.value);
         algorithm.current = e.target.value;
     
         dispatchOutput({

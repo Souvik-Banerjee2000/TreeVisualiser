@@ -40,6 +40,7 @@ function InputDropDown() {
         if(hasTreeDataChanged){
             if(taskValue === "Deletion")
                 console.log("TreeData Changed");
+                    
         }
     })
 
@@ -57,10 +58,34 @@ function InputDropDown() {
                     }
                     setInputValue('');
                 }
+                else{
+                    if(Object.keys(treeData).length>0){
+                        // console.log(inputValue);
+                        dispatchOutput({
+                            type:taskValue,
+                            data:treeData,
+                            inputValue
+                        })
+                    }
+                    setInputValue('');
+                }
             }
         }
 
     },[drawerOpen])
+
+    useEffect(()=>{
+        
+        if(Object.keys(treeData).length>0){
+            // console.log(inputValue);
+            dispatchOutput({
+                type:taskValue,
+                data:treeData,
+                inputValue
+            })
+        }
+        setInputValue('');
+    },[treeData])
 
     return (
 

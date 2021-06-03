@@ -238,8 +238,47 @@ export const postorder = (state,data)=>{
     // console.log(state);
     if(Object.keys(data).length > 0){
         postorderTraversal(data);
-        console.log(result);
+        // console.log(result);
     }   
     return JSON.parse(JSON.stringify(result));
+
+}
+
+
+
+export const findKthMax = (state,data,inputValue)=>{
+
+    result = [];
+    // console.log(state);
+    if(Object.keys(data).length > 0){
+        inorderTraversal(data);
+        console.log(result);
+    }   
+    if(inputValue > result.length && inputValue < 1 ){
+        return JSON.parse(JSON.stringify([`Wrong`, `Index value must be within ${1} to ${result.length} `]))
+    }else{
+        result.reverse();
+        return JSON.parse(JSON.stringify([result[Number(inputValue)-1]]))
+    }
+
+
+}
+
+
+export const findKthMin = (state,data,inputValue)=>{
+
+    result = [];
+    // console.log(state);
+    if(Object.keys(data).length > 0){
+        inorderTraversal(data);
+        // console.log(result);
+    }   
+    if(inputValue > result.length && inputValue < 1 ){
+        return JSON.parse(JSON.stringify([`Wrong`, `Index`,`value must be within ${1} to ${result.length} `]))
+    }else{
+
+        return JSON.parse(JSON.stringify([result[Number(inputValue)-1]]))
+    }
+
 
 }
