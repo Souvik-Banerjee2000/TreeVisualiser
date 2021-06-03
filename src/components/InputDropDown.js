@@ -48,13 +48,15 @@ function InputDropDown() {
         if(!drawerOpen){
             if(taskValue !== '' && inputValue!== ''){
                 if(taskValue === 'Deletion'){
-                    // console.log(inputValue);
-                    dispatch({
-                        type:"Deletion",
-                        inputValue
-                    })
+                    if(Object.keys(treeData).length>0){
+                        // console.log(inputValue);
+                        dispatch({
+                            type:"Deletion",
+                            inputValue
+                        })
+                    }
+                    setInputValue('');
                 }
-                setInputValue('');
             }
         }
 
