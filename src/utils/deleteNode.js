@@ -1,3 +1,5 @@
+
+import {inorder} from "./traversals";
 let isFound = true;
 
 
@@ -128,47 +130,55 @@ function del(root,val){
 export const deleteNode = (state,input)=>{
 
     // console.log(state);
-    if(Number(state.name) === Number(input)){
-        if(state.attributes.left === '' && state.attributes.right === ''){
-            return {};
-        } 
-        else if(state.attributes.left === '' && state.attributes.right!==''){
-            // console.log(state.children);
-            state = state.children[0];    
-            // console.log(state.children);
-        }else if(state.attributes.left!==''){
-            if(state.attributes.right === ''){
+    console.log(inorder(state,state));
+    let r = inorder(state,state);
+    if(r.indexOf(Number(input)) === -1){
+        isFound = false;
+    }else{
+        if(Number(state.name) === Number(input)){
+            if(state.attributes.left === '' && state.attributes.right === ''){
+                return {};
+            } 
+            else if(state.attributes.left === '' && state.attributes.right!==''){
                 // console.log(state.children);
-                state = state.children[0];
+                state = state.children[0];    
                 // console.log(state.children);
-            }else{
-                let [greatest,parent] = findGreatest(state.children[0],state);
-                // let parent = findParent(greatest,root.children[0].children[0]);
-
-                console.log(greatest,parent);
-
-                if(parent !== state){
-                    parent.attributes.right = greatest.attributes.left;
-                    let v = greatest.children;
-                    console.log(v);
-                    parent.children.pop();
-                    parent.children.push(...v);
+            }else if(state.attributes.left!==''){
+                if(state.attributes.right === ''){
+                    // console.log(state.children);
+                    state = state.children[0];
+                    // console.log(state.children);
                 }else{
-                    parent.attributes.left = greatest.attributes.left;
-                    let v = greatest.children;
-                    parent.children.shift();
-                    parent.children.unshift(...v);
+                    let [greatest,parent] = findGreatest(state.children[0],state);
+                    // let parent = findParent(greatest,root.children[0].children[0]);
+    
+                    console.log(greatest,parent);
+    
+                    if(parent !== state){
+                        parent.attributes.right = greatest.attributes.left;
+                        let v = greatest.children;
+                        console.log(v);
+                        parent.children.pop();
+                        parent.children.push(...v);
+                    }else{
+                        parent.attributes.left = greatest.attributes.left;
+                        let v = greatest.children;
+                        parent.children.shift();
+                        parent.children.unshift(...v);
+                    }
+    
+    
+                    state.name = greatest.name;
+    
                 }
-
-
-                state.name = greatest.name;
-
             }
+    
+        }else{
+            del(state,Number(input));
         }
 
-    }else{
-        del(state,Number(input));
     }
+
 
     if(isFound)
         return JSON.parse(JSON.stringify(state));
