@@ -20,7 +20,7 @@ function App() {
       <ResultContextProvider>    
         <SubmissionContextProvider>  
         <CurrentProblemContextProvider>
-          <div style={{width:'100vw',display:'flex',alignItems:'center',justifyContent:'center',marginBottom:'20px'}}>
+          <div draggable={true} style={{width:'100vw',display:'flex',alignItems:'center',justifyContent:'center',marginBottom:'20px'}}>
             <h1 style={{ margin:'0 auto' , color:'#2c88d9'}}>Binary Search Tree</h1>
         </div>
           <div style={{display:'flex',flexDirection:'column'}}>
